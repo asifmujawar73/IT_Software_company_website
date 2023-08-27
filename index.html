@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rj Technology</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            display: flex;
+            overflow: hidden;
+            background-color: yellow;
+        }
+
+        #discount {
+            padding: 13px;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 18px;
+            white-space: nowrap;
+            animation: scrollText 8s linear infinite alternate;
+            line-height: 1;
+        }
+
+        @keyframes scrollText {
+            0% {transform: translateX(100%);}
+            100% {transform: translateX(-100%);}
+        }
+
+        #contact {
+            display: flex;
+            justify-content: flex-start;
+            background-color: rgb(8, 27, 49);
+            color: white;
+            padding: 15px 20px;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        #contact p {
+            margin: 0;
+            padding-right: 20px;
+        }
+
+        #contact p:hover {
+            color: rgb(207, 43, 30);
+        }
+
+        #social-media {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        #social-media a {
+            text-decoration: none;
+            padding: 0 10px;
+            margin: 0 10px;
+            color: white;
+        }
+
+        #main {
+            display: grid;
+            grid-template-columns: 25% 75%;
+            padding: 5px;
+            background-color: rgb(183, 202, 203);
+        }
+
+        #pages {
+            margin-top: 26px;
+        }
+
+        #pages a {
+            text-decoration: none;
+            padding: 30px;
+            font-size: 20px;
+            position: relative;
+        }
+
+        .sub-pages {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-top: none;
+            width: 100%;
+            z-index: 1;
+        }
+
+        #pages > a:hover .sub-pages {
+            display: block;
+        }
+
+        .sub-pages a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .sub-pages:hover {
+            background-color: #f5f5f5;
+        }
+
+        #pages a:hover {
+            background-color: white;
+            color: rgb(206, 69, 61);
+        }
+
+        .btn {
+            margin-left: 80px;
+            /* color: white; */
+            border-radius: 5px;
+            font-size: 16px;
+            /* background-color: rgb(101, 177, 148); */
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: aqua;
+            color: black;
+        }
+
+        #head-title {
+            font-family: 'Courier New', Courier, monospace;
+            
+        }
+
+        #contactForm:target {
+            text-align: center; 
+            background-color: aqua;
+            display: block;
+            position: fixed;
+            top: 200px;
+            right: 0;
+            margin-right: 50px;
+            width: 300px; /* Adjust the width as needed */
+            height: 450px;
+            padding: 30px;
+            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            /* border-radius: 8px; */
+        }
+
+        #contactForm {
+            display:none;
+            text-align: center;
+
+        } 
+
+        .form-main, select{ 
+            padding: 5px;
+            width: 280px;
+            /* text-align: center; */
+            font-size: 15px;
+        }
+
+        input, label ,select{
+            font-size: 15px;
+            width: 270px;
+            height: 35px;
+            /* text-align: center; */
+        }
+
+        .quary-btn{
+            background-color: rgb(99, 171, 273);
+            text-align: center;
+            /*margin: 10px; */
+            font-size: 17px;
+            width: 220px;
+            height:40px;
+            border-radius: 5%;
+            margin-top: 50px; */
+        }
+
+        #course{
+            margin-top: 20px;
+            height: 40px;
+            margin-left: 10px;
+            padding: auto;
+            width: 280px;
+           
+        }
+
+        h3{
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        #main1 {
+            background: url("images/image1.jpg") repeat;
+            background-size: cover;
+            color: white;
+            /* text-align: center; */
+            padding: 100px;
+        }
+
+        #main1 h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        #main1 p {
+            margin: 20px 0;
+            font-size: 20px;
+            font: bold;
+        }
+
+        /* Add more background images */
+        @keyframes slide {
+            0% {
+                background-image: url("images/image1.jpg");
+            }
+            25% {
+                background-image: url("images/image2.jpg");
+            }
+            50% {
+                background-image: url("images/image3.jpg");
+            }
+            75% {
+                background-image: url("images/image4.jpg");
+            }
+            100% {
+                background-image: url("images/image1.jpg");
+            }
+        }
+
+        /* Apply animation to the sliding background images */
+        #main1 {
+            animation: slide 10s  linear infinite; /* Adjust the duration as needed */
+        }
+
+
+        #main1, input, textarea{
+            margin: 10px;
+        }
+
+        textarea{
+            font-size: 18px;
+        }
+
+        #apply-online{
+            /* display: none; */
+            background-color: aqua;
+            text-align: center;
+            font-size: 22px;
+            width: 170px;
+            height: 40px;
+            margin: 20px;
+        }
+
+        #interested-button{
+            /* padding-top: 0; */
+            border-radius: 5px;
+            background-color: aqua;
+            padding:  10px; 
+            margin: 15px;
+            margin-left: 30px;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .main1-form:target {
+            background-color: rgb(234, 184, 184);
+            text-align: center;
+            display: block;
+            position: fixed;
+            top: 45%;
+            left: 70%;
+            transform: translate(-50%, -50%); 
+            width: 20%;
+            height: 45%;
+            padding: 30px;
+            margin: 50px;
+            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+
+        .main1-form{
+            display: none;
+            padding: 20px;
+            background-color: white;
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        #apply-online-button {
+            background-color: aqua;
+            display: block;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        #apply-online-button:target {
+            display: none;
+        }
+
+        .key-features{
+            text-align: center;
+            padding: 50px;
+            font-size: 17px;
+        }
+        
+        .box {
+            background-color: rgb(92, 164, 135);
+            color: white;
+            width: calc(23% - 10px); /* Adjust the width as needed */
+            margin: 6px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 5px 8px rgba(11, 11, 11, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            height: 140px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .box p {
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        .icon {
+            font-size: 30px; /* Adjust the size of the icon */
+            margin-bottom: 10px;
+        }
+
+        .icon i {
+            display: block;
+        }
+
+
+        .box:hover{
+            background-color: white;
+            color: black;
+        }
+
+        .our-courses{
+            text-align: center;
+            padding: 50px;
+            font-size: 20px;
+        }
+
+        .our-courses1{
+            flex-basis: calc(28.33% - 5px);
+            background-color: white;
+            color: rgb(117, 117, 117);
+            text-align: center;
+            width: 300px;
+            height: 380px;
+            margin: 30px;
+            /* border: 3px solid rgb(128, 166, 223); */
+            box-shadow: 0 0 5px 8px rgba(11, 11, 11, 0.1);
+        }
+
+        .our-courses1 h1 {
+            background-color: rgb(120, 212, 171);
+            margin: 0;
+        }
+
+        .our-courses1, h3{
+            color: black;
+            margin-top: 40px;
+            
+        }
+
+        .courses1-btn{
+            padding: 10px;
+            margin-top: 25px;
+            width: 120px;
+            font-size: 16px;
+        }
+
+        .our-courses-container{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .courses1-btn :hover{
+            color: blue;
+            
+        }
+
+        
+    /*-----------Create account form  ---------------------------------------------------------------------- */
+
+
+        .container {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .left-content {
+            background-color: #FFC107;
+            flex: 40%;
+            padding: 50px;
+            color: white;
+            
+        }
+
+        .left-content h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .left-content p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .right-content {
+            flex: 60%;
+            padding: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .right-content form {
+            background-color: #F5F5F5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            
+        }
+
+        .right-content h2 {
+            margin: 0;
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+
+        .right-content .row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        /* here width  */
+        .right-content .row label {
+            width: 85px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .right-content .row input {
+            flex: 1;
+            padding: 5px;
+            width: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .right-content .row .emailss{
+            width: 5%; 
+            
+        }
+        .right-content .row.description textarea {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            font-size: 16px;
+        }
+
+        .right-content .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .right-content .buttons button {
+            padding: 10px 20px;
+            background-color: #FFC107;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        /* .right-content .buttons button.reset {
+            background-color: #E0E0E0;
+            color: #333;
+        } */
+
+        .right-content .buttons button:hover {
+            background-color: #FFA000;
+        }
+
+
+        /* -----------------------------------------Form Connect----------------------------------------- */
+
+
+        /* .password-input {
+            padding: 5px;
+            width: 150px;
+        }
+
+        .password-input:hover {
+            transition: 0.5s;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+
+        .password-input:focus {
+            outline: none;
+            width: 200px;
+        } */
+
+        .apply-online-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        #apply-online-link:target + .container {
+            display: block;
+        }
+
+        #apply-online-link {
+            background-color: rgb(19, 28, 9);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 25px;
+        }
+
+        #apply-online-link:hover {
+            background-color: #00bfff;
+        }
+
+
+        /* .warning {
+            display: none;
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        } */
+
+
+        /* ---------------------------------------Footer-Heading---------------------------------------------*/
+
+        footer{
+        background-color: rgb(236, 248, 250);
+        margin-top: 30px;
+        padding: 40px;
+        }
+
+
+        .footer-columns{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+        }
+
+
+        .footer-column input{
+            height: 30px;
+            width: 200px;
+            margin-left: 0%;
+        }
+
+        .footer-heading{
+            font-size: 26px;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul{
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li{
+            margin-bottom: 7px;
+        }
+
+        .footer-social-icons{
+            margin-top: 20px;
+        }
+
+        .footer-social-icons a{
+            margin-right: 10px;
+        }
+
+        .footer-social-icons img{
+            width: 30px;
+            height: 30px;
+        }
+
+
+        .footer-column form img{
+            width: 25px;
+            height: 25px;
+        }
+
+        /* #footer-btn img{
+            margin-top: 10px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div id="discount">Our Best Offer Ever!! Summer Special-Get 3 Courses at 24999/-only <a href="">Read More</a></div>
+    </div>
+
+    <div id="contact">
+        <p>Email: rjtechnology@gmail.com</p>
+        <p>Contact: +91 9025741101</p>
+        <div id="social-media">
+            <a href=""><img src="" alt="">Facebook</a>
+            <a href=""><img src="" alt="">Twitter</a>
+            <a href=""><img src="" alt="">Instagram</a>
+            <a href=""><img src="" alt="">LinkedIn</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="head-title">
+            <h2><img src="" alt="">Rj Technology</h2>
+        </div>
+        <div id="pages">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="">Courses</a>
+            <a href="">Online Training</a>
+            <a href="#contactForm" class="btn">Enquiry</a>
+        </div>
+        <div id="contactForm">
+            <h3>Request for <br>Claas Room & Online Training Quotation</h3>
+            <form class="form-main">
+                <label for="name"></label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your name"><br>
+                <label for="email"></label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email"><br>
+                <label for="contactNumber"></label><br>
+                <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact number"><br>
+                <!-- <label for="course">Select course:</label><br> -->
+                <select id="course" name="Course">
+                    <option value="html">Select Course</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="react">React</option>
+                </select><br>
+                <!-- <input type="submit" value="Submit Query"> -->
+                <button class="quary-btn">Submit Query</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="main1">
+        <h1>RJ Technology</h1>
+        <p>Best Online & Classroom Training Institute</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Accusantium distinctio, omnis repudiandae numquam porro,<br> unde debitis quae aspernatur voluptates odit fugit magnam quo corporis minus quia esse. <br> Illo culpa, rerum iste quisquam, blanditiis non libero veniam, <br>sed excepturi corporis omnis unde eos delectus fugiat fuga? <br> Veniam debitis commodi et nobis?</p>
+         <!-- <button id="apply-online">Apply Online</button>
+         <a href="#main1-form">Apply Online</a>  -->
+         <!-- <button><a id="apply-online" "#main1-form">Apply Online</a></button> -->
+         <!-- <button><a href="#main1-form" id="apply-online">Apply Online</a></button> -->
+         <button><a href="#main1-form" id="apply-online-button">Apply Online</a></button>
+        
+        <!-- Move the <form> element inside the same <div> -->
+        <form class="main1-form" id="main1-form">
+            <h3>Quick Enquiry</h3>
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Name*"><br>
+            <label for="10 digit mobile No*"></label>
+            <input type="tel" name="mobileNumber" id="mobileNumber" placeholder="10 digit mobile No*"><br>
+            <label for="Email"></label>
+            <input type="email" name="email" id="email" placeholder="Email*"><br>
+            <label for="Note"></label>
+            <textarea style="resize: none;" name="note" id="note" cols="23" rows="3"  maxlength="100" placeholder="Have somthing to write?" ></textarea><br>
+            <button id="interested-button">I'm Interested, tell me more</button>
+        </form>
+    </div>
+
+    <div class="key-features">
+        <h1>Key Features</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta nam quia consectetur dolores doloremque recusandae fugiat, iure ex quos praesentium,<br> magnam repellendus non provident? Assumenda.</p>
+    </div>
+
+    <div class="box">
+        <!-- <div class="icon"><i class="fas fa-user"></i></div> -->
+        <h3>Expert Faculty</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, impedit?</p>
+      </div>
+      <div class="box">
+        <h3>Well Equipped Labs</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, impedit?</p>
+      </div>
+      <div class="box">
+        <h3>Quality Education</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, impedit?</p>
+      </div>
+      <div class="box">
+        <h3>24 * 7 Access</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, impedit?</p>
+      </div>
+
+      <div class="our-courses">
+        <h1>Our Courses</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus ex molestias laborum perferendis magni. Corporis aspernatur incidunt soluta <br> placeat consectetur perspiciatis esse molestias totam ipsam?</p>
+      </div>
+
+
+      <div class="our-courses-container">
+      <div class="our-courses1">
+        <h1>Full Stack Development</h1>
+        <h3>Cras ultricies lacus consectetur,<br>
+            consectetur</h3>
+            <p style="font-size: 22px;">⭐️⭐️⭐️⭐️</p>
+            <p style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur <br>
+                adipisicing elit. Nulla, fugiat.consectetur <br>
+                adipisicing elit. Nulla, fugiat.</p>
+                <a id="apply-online-link" href="#container">Apply Online</a>
+      </div>
+
+      <div class="our-courses1">
+        <h1>Front End Development</h1>
+        <h3>Cras ultricies lacus consectetur,<br>
+            consectetur</h3>
+            <p style="font-size: 22px;">⭐️⭐️⭐️⭐️</p>
+            <p style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur <br>
+                adipisicing elit. Nulla, fugiat.consectetur <br>
+                adipisicing elit. Nulla, fugiat.</p>
+                <a id="apply-online-link" href="#container">Apply Online</a>
+      </div>
+
+      <div class="our-courses1">
+        <h1>Back End Development</h1>
+        <h3>Cras ultricies lacus consectetur,<br>
+            consectetur</h3>
+            <p style="font-size: 22px;">⭐️⭐️⭐️⭐️</p>
+            <p style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur <br>
+                adipisicing elit. Nulla, fugiat.consectetur <br>
+                adipisicing elit. Nulla, fugiat.</p>
+                <!-- <button class="courses1-btn">Apply Online</button> -->
+                <a id="apply-online-link" href="#container">Apply Online</a>
+      </div>
+    </div>
+    <div class="our-courses-container">
+    <div class="our-courses1">
+        <h1>Data Science</h1>
+        <h3>Cras ultricies lacus consectetur,<br>
+            consectetur</h3>
+            <p style="font-size: 22px;">⭐️⭐️⭐️⭐️</p>
+            <p style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur <br>
+                adipisicing elit. Nulla, fugiat.consectetur <br>
+                adipisicing elit. Nulla, fugiat.</p>
+                <!-- <button class="courses1-btn">Apply Online</button> -->
+                <a id="apply-online-link" href="#container">Apply Online</a>
+      </div>
+
+      <div class="our-courses1">
+        <h1>AWS</h1>
+        <h3>Cras ultricies lacus consectetur,<br>
+            consectetur</h3>
+            <p style="font-size: 22px;">⭐️⭐️⭐️⭐️</p>
+            <p style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur <br>
+                adipisicing elit. Nulla, fugiat.consectetur <br>
+                adipisicing elit. Nulla, fugiat.</p>
+                <!-- <button class="courses1-btn">Apply Online</button> -->
+                <a id="apply-online-link" href="#container">Apply Online</a>
+      </div>
+
+      <div class="our-courses1">
+        <h1>DevOps</h1>
+        <h3>Cras ultricies lacus consectetur,<br>
+            consectetur</h3>
+            <p style="font-size: 22px;">⭐️⭐️⭐️⭐️</p>
+            <p style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur <br>
+                adipisicing elit. Nulla, fugiat.consectetur <br>
+                adipisicing elit. Nulla, fugiat.</p>
+                <!-- <button class="courses1-btn">Apply Online</button> -->
+                <a id="apply-online-link" href="#container">Apply Online</a>
+      </div>
+    </div>
+    <div class="container" id="container">
+        <div class="left-content">
+            <h1>RJ<br>Technology</h1>
+            <p>M.VERVE<br>Inspired Applications</p>
+            <div class="connect">
+                <h2>To connect with us please enter the details</h2>
+            </div>
+        </div>
+        <div class="right-content">
+            <form>
+                <h2>Create an Account</h2>
+                <div class="row">
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" required>
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <div class="row">
+                    <label>Age</label>
+                    <input type="number" placeholder="18-100" required>
+                </div>
+                <div class="row">
+                    <label>Mobile Number</label>
+                    <input type="tel" placeholder="mobile number" required>
+                    <label class="emailss">Email</label>
+                    <input class="emailss"  type="email" placeholder="abc@gmail.com" required>
+                </div>
+                <div class="row description">
+                    <label>Description</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <div class="row">
+                    <label>Password</label>
+                    <input type="password" class="password-input" required>
+                    <label>Confirm Password</label>
+                    <input type="password" class="password-input" required>
+                </div>
+                <!-- <div class="warning">Please fill out this field.</div> -->
+                <div class="buttons">
+                    <button class="reset">RESET</button>
+                    <button>SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="footer-columns">
+            <div class="footer-column">
+            <div class="footer-heading">Rj Technology</div>
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Distinctio, quae <br> pariatur, aspernatur ab necessitatibus <br> optio dolore doloremque nisi est, ad <br> labore perferendis sapiente animi <br> voluptatum? Veritatis mollitia distinctio <br> eveniet quaerat.</p>
+        </div>
+
+        <div class="footer-column">
+            <div class="footer-heading">Our Services</div>
+            <ul>
+                <li>Mobile Application Design</li>
+                <li>Web Application Design</li>
+                <li>Websites Design</li>
+                <li>Web User Interface Design</li>
+                <li>Web UX Design and Research</li>
+                <li>Theme Development Design</li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <div class="footer-heading">Head Office</div>
+            <p>1/2,Marathahalli, Bengaluru <br>
+                Karnataka-560037, <br>
+                Phone: +91 9025741101 <br>
+                Email: rjtechnology@gmail.com</p>
+                <strong>Office Timing:</strong>10AM - 6PM
+        </div>
+
+        <div class="footer-column">
+            <div class="footer-heading">Subscribe Us</div>
+            <form>
+                <input type="email" placeholder="asifmujawar0073@gmail.com">
+                <a href="https://mail.google.com/"><button id="footer-btn" type="submit"><img src="images/email.png" alt="Subscribe"></button></a>
+            </form>
+            <div class="footer-social-icons">
+                <a href=""><img src="images/facebook.png" alt="Facebook"></a>
+                <a href=""><img src="images/tweeter.png" alt="tweetar"></a>
+                <a href="https://www.linkedin.com/in/asif-mujawar/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/bunny__9y/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+    </body>
+    </html>
+    
+
+
+
+
